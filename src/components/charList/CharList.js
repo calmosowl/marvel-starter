@@ -53,10 +53,11 @@ class CharList extends Component {
     }
 
     renderItems(arr) {
-        const items = arr.map((item) => {
+        const items = arr.map((item, i) => {
             return (
                 <li className="char__item"
                     key={item.id}
+                    tabIndex={i + 3}
                     onClick={() => this.props.onCharSelected(item.id)}>
                         <img src={item.thumbnail} alt={item.name}/>
                         <div className="char__name">{item.name}</div>
